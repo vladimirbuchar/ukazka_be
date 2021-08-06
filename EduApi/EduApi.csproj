@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <Authors>Vladimír Buchar</Authors>
+    <Company></Company>
+    <Product>FlexibleLMS</Product>
+    <PackageProjectUrl>https://www.flexiblelms.com</PackageProjectUrl>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+    <StartupObject />
+    <UserSecretsId>f6af155e-64de-45a9-9bcb-b4934c4c011e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Import\Slider\**" />
+    <Content Remove="Import\Slider\**" />
+    <EmbeddedResource Remove="Import\Slider\**" />
+    <None Remove="Import\Slider\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200421080809_GetMyOrganization.cs" />
+    <Compile Remove="Migrations\20200421080809_GetMyOrganization.Designer.cs" />
+    <Compile Remove="Migrations\20200518181626_AddClassRoomToCourseTerm.cs" />
+    <Compile Remove="Migrations\20200518181626_AddClassRoomToCourseTerm.Designer.cs" />
+    <Compile Remove="Migrations\20200531145130_AddFileRepository.cs" />
+    <Compile Remove="Migrations\20200531145130_AddFileRepository.Designer.cs" />
+    <Compile Remove="Migrations\20200620125455_AddCodeBookSelectValue.cs" />
+    <Compile Remove="Migrations\20200620125455_AddCodeBookSelectValue.Designer.cs" />
+    <Compile Remove="Migrations\20200620141726_AddCodeBookSelectValue.cs" />
+    <Compile Remove="Migrations\20200620141726_AddCodeBookSelectValue.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Admin\Course\" />
+    <Folder Include="Controllers\Admin\User\" />
+    <Folder Include="Data\Slider\" />
+    <Folder Include="Log\" />
+    <Folder Include="wwwroot\FileRepository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="NetEscapades.Extensions.Logging.RollingFile" Version="2.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration\Configuration.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\EduCore\EduCore.csproj" />
+    <ProjectReference Include="..\EduFacade\EduFacade.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
+    <ProjectReference Include="..\WebModel\WebModel.csproj" />
+  </ItemGroup>
+
+  
+
+</Project>
